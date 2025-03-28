@@ -2,6 +2,7 @@
 
 # Load packages -----
 
+# library(brandr)
 library(downlit)
 library(ggplot2)
 # library(here)
@@ -98,7 +99,7 @@ ggplot2::theme_set(
   ggplot2::theme_bw() +
   ggplot2::theme(
     text = ggplot2::element_text(
-      color = get_brand_color("black"),
+      color = brandr::get_brand_color("black"),
       family = "poppins",
       face = "plain"
     ),
@@ -129,7 +130,7 @@ ggplot2::theme_set(
 
 quartor::bbt_write_quarto_bib(
   bib_file = here::here("references.bib"),
-  dir = c(".", "qmd"),
+  dir = c("."),
   pattern = "\\.qmd$",
   wd = here::here()
 )

@@ -41,10 +41,6 @@ website:
       - icon: github
         href: https://danielvartan.github.io/r-course-exercise/
         aria-label: GitHub
-  comments:
-    hypothesis:
-      theme: clean
-      openSidebar: false
 
 lightbox:
   match: auto
@@ -59,7 +55,7 @@ format:
     toc-location: right
     locale: en
     language: en-us
-    code-fold: true
+    code-fold: false
     code-link: true
     code-tools: false
     df-print: paged

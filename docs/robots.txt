@@ -1,0 +1,1 @@
+Sitemap: https://danielvartan.github.io/r-course-exercise/sitemap.xml

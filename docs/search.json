@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "",
+    "section": "Overview",
+    "text": "Overview\nThis report presents a data analysis exercise for the course An Introduction to the R Programming Language.\nThe analysis explores potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022, focusing on clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R).\n\n\n\n\n\n\nThis exercise is for educational purposes only.\nThe assumptions underlying the statistical test were not verified. For simplicity, we assumed that the data meets all necessary assumptions. As a result, the statistical test results may not be valid."
+  },
+  {
+    "objectID": "index.html#question",
+    "href": "index.html#question",
+    "title": "",
+    "section": "Question",
+    "text": "Question\nThis analysis seeks to address the following question:\n\nWas there a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)?"
+  },
+  {
+    "objectID": "index.html#methods",
+    "href": "index.html#methods",
+    "title": "",
+    "section": "Methods",
+    "text": "Methods\nApproach and Procedure Method\nThis study employed the hypothetical-deductive method, also known as the method of conjecture and refutation (Popper, 1972/1979, p. 164), as its problem-solving approach. Procedurally, it applied an enhanced version of Null Hypothesis Significance Testing (NHST), grounded on the original ideas of Neyman-Pearson framework for data testing (Neyman & Pearson, 1928a, 1928b; Perezgonzalez, 2015).\nThe analysis was conducted using a t-test for independent samples alongside visual inspections of the data.\nAdditionally, a power analysis and effect-size estimation were performed to ensure the robustness and practical significance of the results.\nSource of Data/Information\nThe data used in this analysis were sourced from Brazil’s Food and Nutrition Surveillance System (SISVAN), regarding the dataset on ultra-processed food consumption (Sistema de Vigilância Alimentar e Nutricional, n.d.).\nOnly data from municipalities with 10 or more monitored children were considered in the analysis.\nData Wrangling\nData munging and analysis followed the data science workflow outlined by Wickham et al. (2023), as illustrated in Figure 1. All processes were made using the R programming language (R Core Team, n.d.), RStudio IDE (Posit Team, n.d.), and several R packages.\nThe tidyverse and rOpenSci peer-reviewed package ecosystem and other R packages adherents of the tidy tools manifesto (Wickham, 2023) were prioritized. All processes were made in order to provide result transparency and reproducibility.\n\n\nFigure 1: Data science workflow created by Wickham, Çetinkaya-Runde, and Grolemund.\n\n\nSource: Reproduced from Wickham et al. (2023).\n\n\n\nThe Tidyverse code style guide and design principles were followed to ensure consistency and enhance readability.\nAll the analyses are 100% reproducible and can be run again at any time. See the README file in the code repository to learn how to run them.\nHypothesis Testing\nWe tested whether the means of ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differed meaningfully across the clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R).\nTo ensure practical significance, we applied a Minimum Effect Size (MES) criterion, following the original Neyman-Pearson framework for hypothesis testing (Neyman & Pearson, 1928a, 1928b; Perezgonzalez, 2015). The MES was set at Cohen’s threshold for small effects (Cohen’s \\(d\\) = 0.2) (Cohen, 1988). Thus, a difference was considered meaningfully only if its effect-size was greater or equal to the MES; otherwise, it was considered negligible.\nThe test was structured as follows:\n\nNull Hypothesis (\\(\\text{H}_{0}\\)): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen’s \\(d\\) effect-size statistic being smaller than \\(0.2\\) (negligible) or by a non-significant t-test (with a Type I error probability (\\(\\alpha\\)) of \\(0.05\\)).\nAlternative Hypothesis (\\(\\text{H}_{a}\\)): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen’s \\(d\\) effect-size statistic being greater or equal than \\(0.2\\) (non-negligible) and by a significant t-test (with a Type I error probability (\\(\\alpha\\)) of \\(0.05\\)).\n\nFormally:\n\\[\n\\begin{cases}\n\\text{H}_{0}: \\text{Cohen's} \\ d &lt; \\text{MES} \\quad \\text{or} \\quad \\text{t-test is not significant} \\ (\\alpha \\geq 0.05) \\\\\n\\text{H}_{a}: \\text{Cohen's} \\ d \\geq \\text{MES} \\quad \\text{and} \\quad \\text{t-test is significant} \\ (\\alpha &lt; 0.05)\n\\end{cases}\n\\]\nInterpretation of Results\nRevised Multidimensional Index for Sustainable Food Systems (MISFS-R)\nMISFS is a multidimensional index designed to assess the sustainability of food systems at a subnational level in Brazil, incorporating local behaviors and practices. The MISFS-R is a revised version that introduces new indicators and a refined methodology (Figure 2). For more details, see Carvalho et al. (2021) and Norde et al. (2023).\n\n\nFigure 2: Dendrogram for cluster analysis between Brazilian states considering all the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) indicators and geographical location of each cluster.\n\n\nSource: Reproduced from Norde et al. (2023).\n\n\n\nPratical Significance\nTo ensure practical significance, we used Cohen’s \\(d\\) statistic small size benchmark as a reference. This statistic was analyzed considering a confidence interval of \\(95\\%\\).\nWe emphasize the need for the use of a MES while conducting hypothesis tests, since a p-value does not measure effect size; rather, it represents the conditional probability of observing the test statistic (or a more extreme value) given that the null hypothesis is true (Cohen, 1994; Wasserstein & Lazar, 2016)."
+  },
+  {
+    "objectID": "index.html#setting-the-enviroment",
+    "href": "index.html#setting-the-enviroment",
+    "title": "",
+    "section": "Setting the Enviroment",
+    "text": "Setting the Enviroment\n\nlibrary(brandr)\nlibrary(curl)\nlibrary(dplyr)\nlibrary(effectsize)\nlibrary(ggplot2)\nlibrary(here)\nlibrary(infer)\nlibrary(janitor)\nlibrary(patchwork)\nlibrary(pwr)\nlibrary(pwrss)\nlibrary(readr)\nlibrary(readxl)\nlibrary(stringr)\nlibrary(summarytools)\nlibrary(tidyr)"
+  },
+  {
+    "objectID": "index.html#importing-and-tidying-the-data",
+    "href": "index.html#importing-and-tidying-the-data",
+    "title": "",
+    "section": "Importing and Tidying the Data",
+    "text": "Importing and Tidying the Data\nSource: SISVAN Food Consumption dataset for ultra-processed food consumption of children between 2 to 4 years old (Sistema de Vigilância Alimentar e Nutricional, n.d.).\nDownloading the Data\n\nif (!dir.exists(here::here(\"data\"))) dir.create(\"data\")\n\n\nfile &lt;- here(\"data\", \"sisvan-raw.xlsx\")\n\npaste0(\n    \"https://sisaps.saude.gov.br/sisvan/public/file/relatorios/\",\n    \"consumo/2oumais/entre2a4anos/CONS_ULTRA.xlsx\"\n  ) |&gt;\n  curl::curl_download(file)\n\nReading the Data\n\ndata &lt;-\n  here(\"data\", \"sisvan-raw.xlsx\") |&gt;\n  read_xlsx(\n    sheet = \"2022\",\n    skip = 1,\n    col_types = \"text\"\n  )\n\nTidying the Data\n\ndata &lt;-\n  data |&gt;\n  clean_names() |&gt;\n  rename(\n    state_abbrev = uf,\n    municipality_code = codigo_ibge,\n    municipality_name = municipio,\n    n_upf = total,\n    n_upf_rel = percent,\n    n_monitored = x6\n  ) |&gt;\n  mutate(\n    municipality_code = as.integer(municipality_code),\n    municipality_name = str_to_title(municipality_name),\n    n_upf = as.integer(n_upf),\n    n_monitored = as.integer(n_monitored),\n    year = as.integer(2022)\n  ) |&gt;\n  relocate(year)\n\nValidating the Data\n\ndata &lt;-\n  data |&gt;\n  filter(\n    !n_upf &gt; n_monitored,\n    n_monitored &gt;= 10,\n    !state_abbrev == \"DF\"\n  ) |&gt;\n  drop_na(n_upf, n_monitored) |&gt;\n  mutate(n_upf_rel = n_upf / n_monitored)\n\nTransforming the Data\n\ndata &lt;-\n  data |&gt;\n  mutate(\n    misfs = case_match(\n      state_abbrev,\n      c(\"AC\", \"GO\", \"MS\", \"MT\", \"RO\", \"TO\") ~ \"A\",\n      c(\"ES\", \"MG\", \"PR\", \"RJ\", \"RS\", \"SC\", \"SP\") ~ \"B\",\n      c(\"AL\", \"BA\", \"CE\", \"MA\", \"PB\", \"PE\", \"PI\", \"RN\", \"SE\") ~ \"C\",\n      c(\"AM\", \"AP\", \"PA\", \"RR\") ~ \"D\",\n    ) |&gt;\n      factor(levels = c(\"A\", \"B\", \"C\", \"D\"))\n  ) |&gt;\n  filter(misfs %in% c(\"B\", \"D\")) |&gt;\n  relocate(misfs, .before = state_abbrev)\n\n\ndata"
+  },
+  {
+    "objectID": "index.html#saving-the-valid-data",
+    "href": "index.html#saving-the-valid-data",
+    "title": "",
+    "section": "Saving the Valid Data",
+    "text": "Saving the Valid Data\n\ndata |&gt; write_csv(here(\"data\", \"sisvan-valid.csv\"))\n\n\ndata |&gt; write_rds(here(\"data\", \"sisvan-valid.rds\"))"
+  },
+  {
+    "objectID": "index.html#data-dictionary",
+    "href": "index.html#data-dictionary",
+    "title": "",
+    "section": "Data Dictionary",
+    "text": "Data Dictionary\n\n\nyear: Year of the data collection (type: integer).\n\nmisfs: Revised Multidimensional Index for Sustainable Food Systems (MISFS-R) cluster (type: factor).\n\nstate_abbrev: State abbreviation (Federal Unit) (type: character).\n\nmunicipality_code: Municipality code (type: integer).\n\nmunicipality_name: Municipality name (type: character).\n\nn_upf: Number of children that consumed ultra-processed foods (UPF) (type: integer).\n\nn_upf_rel: Percentage of children that consumed ultra-processed foods (UPF) (type: double).\n\nn_monitored: Number of monitored children (type: integer)."
+  },
+  {
+    "objectID": "index.html#checking-distributions",
+    "href": "index.html#checking-distributions",
+    "title": "",
+    "section": "Checking Distributions",
+    "text": "Checking Distributions\n\n\nmisfs\nn_upf_rel\n\n\n\nCodedata |&gt;\n  freq(\n    var = misfs,\n    style = \"rmarkdown\",\n    plain.ascii = FALSE,\n    headings = FALSE\n  )\n\n\nTable 1: Frequencies of the misfs variable.\n\n\n\n \nFreq\n% Valid\n% Valid Cum.\n% Total\n% Total Cum.\n\n\n\nA\n0\n0.00\n0.00\n0.00\n0.00\n\n\nB\n1300\n91.16\n91.16\n91.16\n91.16\n\n\nC\n0\n0.00\n91.16\n0.00\n91.16\n\n\nD\n126\n8.84\n100.00\n8.84\n100.00\n\n\n&lt;NA&gt;\n0\n\n\n0.00\n100.00\n\n\nTotal\n1426\n100.00\n100.00\n100.00\n100.00\n\n\n\nSource: Created by the authors.\n\n\n\nCodelevels &lt;- data |&gt; pull(misfs) |&gt; levels()\n\ndata |&gt;\n  ggplot(aes(y = misfs)) +\n  geom_bar() +\n  labs(x = \"MISFS-R Cluster\", y = \"Frequency\") +\n  scale_y_discrete(limits = rev(levels))\n\n\nFigure 3: Bar plot of the misfs variable.\n\n\n\n\n\n\n\n\n\nSource: Created by the authors.\n\n\n\n\n\nCodedata |&gt;\n  descr(\n    var = n_upf_rel,\n    style = \"rmarkdown\",\n    plain.ascii = FALSE,\n    headings = FALSE\n  )\n\n\nTable 2: Statistics for the n_upf_rel variable.\n\n\n\n \nn_upf_rel\n\n\n\nMean\n0.84\n\n\nStd.Dev\n0.14\n\n\nMin\n0.00\n\n\nQ1\n0.80\n\n\nMedian\n0.87\n\n\nQ3\n0.93\n\n\nMax\n1.00\n\n\nMAD\n0.09\n\n\nIQR\n0.13\n\n\nCV\n0.17\n\n\nSkewness\n-2.59\n\n\nSE.Skewness\n0.06\n\n\nKurtosis\n9.90\n\n\nN.Valid\n1426.00\n\n\nN\n1426.00\n\n\nPct.Valid\n100.00\n\n\n\nSource: Created by the authors.\n\n\n\nCodeplot_hist &lt;-\n  data |&gt;\n  ggplot(aes(x = n_upf_rel)) +\n  geom_histogram(\n    aes(y = after_stat(density)),\n    bins = 30,\n    color = \"white\"\n  ) +\n  labs(x = \"Value\", y = \"Density\") +\n  geom_density(\n    color = get_brand_color(\"red\"),\n    linewidth = 1\n  ) +\n  theme(legend.position = \"none\")\n\nplot_qq &lt;-\n  data |&gt;\n  ggplot(aes(sample = n_upf_rel)) +\n  stat_qq() +\n  stat_qq_line(\n    color = get_brand_color(\"red\"),\n    linewidth = 1\n  ) +\n  labs(\n    x = \"Theoretical quantiles (Std. normal)\",\n    y = \"Sample quantiles\"\n  ) +\n  theme(legend.position = \"none\")\n\nplot_hist + plot_qq\n\n\nFigure 4: Histogram of the n_upf_rel variable with a kernel density estimate, along with a quantile-quantile (Q-Q) plot between the variable and the theoretical quantiles of the normal distribution.\n\n\n\n\n\n\n\n\n\nSource: Created by the authors.\n\n\n\nCodedata |&gt;\n  select(n_upf_rel) |&gt;\n  pivot_longer(everything()) |&gt;\n  ggplot(aes(x = name, y = value)) +\n  geom_boxplot(\n    outlier.color = get_brand_color(\"dark-red\"),\n    outlier.shape = 1,\n    width = 0.75\n  ) +\n  geom_jitter(\n    width = 0.375,\n    alpha = 0.1,\n    color = \"black\",\n    size = 0.5\n  ) +\n  ggplot2::coord_flip() +\n  scale_fill_brand_d() +\n  labs(x = \"Value\") +\n  theme(\n    axis.title.y = ggplot2::element_blank(),\n    axis.text.y = ggplot2::element_blank(),\n    axis.ticks.y = ggplot2::element_blank()\n  )\n\n\nFigure 5: Boxplot of the n_upf_rel variable.\n\n\n\n\n\n\n\n\n\nSource: Created by the authors."
+  },
+  {
+    "objectID": "index.html#checking-combined-distributions",
+    "href": "index.html#checking-combined-distributions",
+    "title": "",
+    "section": "Checking Combined Distributions",
+    "text": "Checking Combined Distributions\nCodedata |&gt;\n  ggplot(aes(x = misfs, y = n_upf_rel, fill = misfs)) +\n  geom_boxplot(outlier.color = get_brand_color(\"dark-red\")) +\n  geom_jitter(width = 0.35, alpha = 0.1) +\n  scale_fill_brand_d(alpha = 0.7) +\n  labs(x = \"MISFS-R\", y = \"UPF consumption (%)\", fill = \"MISFS-R\")\n\n\nFigure 6: Boxplots of the n_upf_rel variable by MISFS-R.\n\n\n\n\n\n\n\n\n\nSource: Created by the authors.\n\n\n\nCodedata |&gt;\n  ggplot(aes(x = n_upf_rel, fill = misfs)) +\n  geom_density(alpha = 0.5, position = \"identity\") +\n  scale_fill_brand_d() +\n  labs(x = \"UPF consumption (%)\", y = \"Density\", fill = \"MISFS\")\n\n\nFigure 7: Density plots of the n_upf_rel variable by MISFS-R.\n\n\n\n\n\n\n\n\n\nSource: Created by the authors."
+  },
+  {
+    "objectID": "index.html#modeling-the-data",
+    "href": "index.html#modeling-the-data",
+    "title": "",
+    "section": "Modeling the Data",
+    "text": "Modeling the Data\n\nobserved_statistic &lt;-\n  data |&gt;\n  specify(n_upf_rel ~ misfs) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  calculate(stat = \"t\", order = c(\"B\", \"D\"))\n#&gt; Dropping unused factor levels c(\"A\", \"C\") from the supplied explanatory\n#&gt; variable 'misfs'.\n\nobserved_statistic\n\n\n  \n\n\n\n\nnull_dist &lt;-\n  data |&gt;\n  specify(n_upf_rel ~ misfs) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(reps = 1000, type = \"permute\") |&gt;\n  calculate(stat = \"t\", order = c(\"B\", \"D\"))\n#&gt; Dropping unused factor levels c(\"A\", \"C\") from the supplied explanatory\n#&gt; variable 'misfs'.\n\nnull_dist\n\n\n  \n\n\n\nCodenull_dist |&gt;\n  visualize() +\n  shade_p_value(obs_stat = observed_statistic, direction = \"two-sided\") +\n  labs(title = NULL, x = \"t-statistic\", y = \"Frequency\")\n\n\nFigure 8: Simulation of the null distribution of the t-statistic along with the observed t-statistic.\n\n\n\n\n\n\n\n\n\nSource: Created by the authors.\n\n\n\n\nnull_dist |&gt;\n  get_p_value(obs_stat = observed_statistic, direction = \"two-sided\")"
+  },
+  {
+    "objectID": "index.html#assessing-the-effect-size",
+    "href": "index.html#assessing-the-effect-size",
+    "title": "",
+    "section": "Assessing the Effect Size",
+    "text": "Assessing the Effect Size\n\nCodemisfs_b &lt;-\n  data |&gt;\n  filter(misfs == \"B\") |&gt;\n  pull(n_upf_rel)\n\nmisfs_d &lt;-\n  data |&gt;\n  filter(misfs == \"D\") |&gt;\n  pull(n_upf_rel)\n\n\n\neffect_size &lt;-\n  cohens_d(\n    x = misfs_b,\n    y = misfs_d,\n    mu = 0,\n    adjust = TRUE, # Hedge's g\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\neffect_size\n\n\n  \n\n\n\n\neffect_size |&gt; interpret_hedges_g(rules = \"cohen1988\")"
+  },
+  {
+    "objectID": "index.html#assessing-power",
+    "href": "index.html#assessing-power",
+    "title": "",
+    "section": "Assessing Power",
+    "text": "Assessing Power\n\npwr_analysis &lt;- pwrss.t.2means(\n  mu1 = misfs_b |&gt; mean(na.rm = TRUE),\n  mu2 = misfs_d |&gt; mean(na.rm = TRUE),\n  sd1 = misfs_b |&gt; sd(na.rm = TRUE),\n  sd2 = misfs_d |&gt; sd(na.rm = TRUE),\n  paired = FALSE,\n  n2 = length(misfs_d),\n  kappa = length(misfs_b) / length(misfs_d),\n  power = NULL,\n  alpha = 0.05,\n  welch.df = TRUE,\n  alternative = \"not equal\"\n)\n#&gt;  Difference between Two means \n#&gt;  (Independent Samples t Test) \n#&gt;  H0: mu1 = mu2 \n#&gt;  HA: mu1 != mu2 \n#&gt;  ------------------------------ \n#&gt;   Statistical power = 0.123 \n#&gt;   n1 = 1300 \n#&gt;   n2 = 126 \n#&gt;  ------------------------------ \n#&gt;  Alternative = \"not equal\" \n#&gt;  Degrees of freedom = 160.11 \n#&gt;  Non-centrality parameter = 0.789 \n#&gt;  Type I error rate = 0.05 \n#&gt;  Type II error rate = 0.877\n\n\nCodepower.t.test(\n  ncp = pwr_analysis$ncp,\n  df = pwr_analysis$df,\n  alpha = 0.05,\n  alternative = \"not equal\",\n  plot = TRUE,\n  verbose = FALSE\n)"
+  },
+  {
+    "objectID": "index.html#conclusion",
+    "href": "index.html#conclusion",
+    "title": "",
+    "section": "Conclusion",
+    "text": "Conclusion\nOur analysis indicates that the difference in means was not statistically significant (\\(t\\) = 0.789, \\(p\\) = 0.384). The effect size was very small and did not exceed the Minimal Effect Size (MES) threshold (Hedges’ \\(g\\) = 0.06, 95% CI [-0.12, 0.25]), suggesting that any potential difference is likely negligible. Hedges’ \\(g\\) is interpreted similarly to Cohen’s \\(d\\).\nThe test had low power (1 - \\(\\beta\\) = 0.123), meaning a high probability of failing to detect a true difference if one exists (\\(\\beta = 0.877\\)). Given the low statistical power and the small effect size, the evidence is insufficient to support a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across clusters B and D."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "",
+    "section": "License",
+    "text": "License\n \nThe code in this report is licensed under the MIT License, while the document are available under the Creative Commons Attribution 4.0 International License."
+  },
+  {
+    "objectID": "index.html#how-to-cite",
+    "href": "index.html#how-to-cite",
+    "title": "",
+    "section": "How to Cite",
+    "text": "How to Cite\nTo cite this work, please use the following format:\nVartanian, D., & Pereira, J. L. (2025). An introduction to the R programming language: Class exercise [Report]. Sustentarea Research and Extension Group at the University of São Paulo. https://danielvartan.github.io/r-course-exercise/\nA BibTeX entry for LaTeX users is\n@techreport{vartanian2025,\n  title = {An introduction to the R programming language: Class exercise},\n  author = {{Daniel Vartanian} and {Jaqueline Lopes Pereira}},\n  year = {2025},\n  address = {São Paulo},\n  institution = {Sustentarea Research and Extension Group at the University of São Paulo},\n  langid = {en},\n  url = {https://danielvartan.github.io/r-course-exercise/}\n}"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "",
+    "section": "References",
+    "text": "References\n\n\nCarvalho, A. M. de, Verly Jr, E., Marchioni, D. M., & Jones, A. D. (2021). Measuring sustainable food systems in Brazil: A framework and multidimensional index to evaluate socioeconomic, nutritional, and environmental aspects. World Development, 143, 105470. https://doi.org/10.1016/j.worlddev.2021.105470\n\n\nCohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Lawrence Erlbaum Associates.\n\n\nCohen, J. (1994). The earth is round (p\\(&lt;\\).05). American Psychologist, 49(12), 997–1003. https://doi.org/10.1037/0003-066X.49.12.997\n\n\nNeyman, J., & Pearson, E. S. (1928a). On the use and interpretation of certain test criteria for purposes of statistical inference: Part I. Biometrika, 20A(1/2), 175–240. https://doi.org/10.2307/2331945\n\n\nNeyman, J., & Pearson, E. S. (1928b). On the use and interpretation of certain test criteria for purposes of statistical inference: Part II. Biometrika, 20A(3/4), 263–294. https://doi.org/10.2307/2332112\n\n\nNorde, M. M., Porciuncula, L., Garrido, G., Nunes-Galbes, N. M., Sarti, F. M., Marchioni, D. M. L., & de Carvalho, A. M. (2023). Measuring food systems sustainability in heterogenous countries: The Brazilian multidimensional index updated version applicability. Sustainable Development, 31(1), 91–107. https://doi.org/10.1002/sd.2376\n\n\nPerezgonzalez, J. D. (2015). Fisher, Neyman-Pearson or NHST? A tutorial for teaching data testing. Frontiers in Psychology, 6. https://doi.org/10.3389/fpsyg.2015.00223\n\n\nPopper, K. R. (1979). Objective knowledge: An evolutionary approach. Oxford University Press. (Original work published 1972)\n\n\nPosit Team. (n.d.). RStudio: Integrated development environment for R [Computer software]. Posit Software. http://www.posit.co\n\n\nR Core Team. (n.d.). R: A language and environment for statistical computing [Computer software]. R Foundation for Statistical Computing. https://www.R-project.org\n\n\nSistema de Vigilância Alimentar e Nutricional. (n.d.). Relatórios de acesso público [Data set]. Retrieved March 19, 2023, from https://sisaps.saude.gov.br/sisvan/relatoriopublico/\n\n\nWasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: Context, process, and purpose. The American Statistician, 70(2). https://doi.org/10.1080/00031305.2016.1154108\n\n\nWickham, H. (2023, February 23). The tidy tools manifesto. Tidyverse. https://tidyverse.tidyverse.org/articles/manifesto.html\n\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science: Import, tidy, transform, visualize, and model data (2nd ed.). O’Reilly Media. https://r4ds.hadley.nz"
+  }
+]
