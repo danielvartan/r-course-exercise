@@ -268,8 +268,9 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>This exercise is for <strong>educational purposes only</strong>.</p>
-<p>The assumptions underlying the statistical test were not verified. For simplicity, we assumed that the data meets all necessary assumptions. As a result, the statistical test results may not be valid.</p>
+<p><strong>This exercise is for educational purposes only</strong>.</p>
+<p>The data requires additional cleaning and validation to ensure its suitability for real-world applications. This analysis assumes the data is valid and reliable, which may not necessarily hold true.</p>
+<p>Furthermore, the assumptions underlying the statistical tests were not explicitly verified. For simplicity, it was presumed that the data satisfies all necessary assumptions. Consequently, the validity of the statistical test results may be compromised.</p>
 </div>
 </div>
 </div>
@@ -305,14 +306,14 @@ Figure&nbsp;1: Data science workflow created by Wickham, Çetinkaya-Runde, and G
 <p>To ensure practical significance, we applied a Minimum Effect Size (MES) criterion, following the original Neyman-Pearson framework for hypothesis testing <span class="citation" data-cites="neyman1928 neyman1928a perezgonzalez2015">(<a href="#ref-neyman1928" role="doc-biblioref">Neyman &amp; Pearson, 1928a</a>, <a href="#ref-neyman1928a" role="doc-biblioref">1928b</a>; <a href="#ref-perezgonzalez2015" role="doc-biblioref">Perezgonzalez, 2015</a>)</span>. The MES was set at Cohen’s threshold for small effects (Cohen’s <span class="math inline">\(d\)</span> = 0.2) <span class="citation" data-cites="cohen1988a">(<a href="#ref-cohen1988a" role="doc-biblioref">Cohen, 1988</a>)</span>. Thus, a difference was considered meaningfully only if its effect-size was greater or equal to the MES; otherwise, it was considered negligible.</p>
 <p>The test was structured as follows:</p>
 <ul>
-<li><p><strong>Null Hypothesis</strong> (<span class="math inline">\(\text{H}_{0}\)</span>): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen’s <span class="math inline">\(d\)</span> effect-size statistic being smaller than <span class="math inline">\(0.2\)</span> (negligible) <strong>or</strong> by a non-significant t-test (with a Type I error probability (<span class="math inline">\(\alpha\)</span>) of <span class="math inline">\(0.05\)</span>).</p></li>
-<li><p><strong>Alternative Hypothesis</strong> (<span class="math inline">\(\text{H}_{a}\)</span>): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen’s <span class="math inline">\(d\)</span> effect-size statistic being greater or equal than <span class="math inline">\(0.2\)</span> (non-negligible) <strong>and</strong> by a significant t-test (with a Type I error probability (<span class="math inline">\(\alpha\)</span>) of <span class="math inline">\(0.05\)</span>).</p></li>
+<li><p><strong>Null Hypothesis</strong> (<span class="math inline">\(\text{H}_{0}\)</span>): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully across MISFS-R clusters B and D, indicated by Cohen’s <span class="math inline">\(d\)</span> effect-size statistic being smaller than <span class="math inline">\(0.2\)</span> (negligible) <strong>or</strong> by a non-significant t-statistic (with a Type I error probability (<span class="math inline">\(\alpha\)</span>) of <span class="math inline">\(0.05\)</span>).</p></li>
+<li><p><strong>Alternative Hypothesis</strong> (<span class="math inline">\(\text{H}_{a}\)</span>): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully across MISFS-R clusters B and D, indicated by Cohen’s <span class="math inline">\(d\)</span> effect-size statistic being greater or equal than <span class="math inline">\(0.2\)</span> (non-negligible) <strong>and</strong> by a significant t-statistic (with a Type I error probability (<span class="math inline">\(\alpha\)</span>) of <span class="math inline">\(0.05\)</span>).</p></li>
 </ul>
 <p>Formally:</p>
 <p><span class="math display">\[
 \begin{cases}
-\text{H}_{0}: \text{Cohen's} \ d &lt; \text{MES} \quad \text{or} \quad \text{t-test is not significant} \ (\alpha \geq 0.05) \\
-\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES} \quad \text{and} \quad \text{t-test is significant} \ (\alpha &lt; 0.05)
+\text{H}_{0}: \text{Cohen's} \ d &lt; \text{MES} \quad \text{or} \quad \text{t-statistic is not significant} \ (\alpha \geq 0.05) \\
+\text{H}_{a}: \text{Cohen's} \ d \geq \text{MES} \quad \text{and} \quad \text{t-statistic is significant} \ (\alpha &lt; 0.05)
 \end{cases}
 \]</span></p>
 </section><section id="interpretation-of-results" class="level3"><h3 class="anchored" data-anchor-id="interpretation-of-results">Interpretation of Results</h3>
@@ -933,7 +934,7 @@ Figure&nbsp;8: Simulation of the null distribution of the t-statistic along with
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/pwrss/man/0-Generic-t-Test.html">power.t.test</a></span><span class="op">(</span></span>
 <span>  ncp <span class="op">=</span> <span class="va">pwr_analysis</span><span class="op">$</span><span class="va">ncp</span>,</span>
 <span>  df <span class="op">=</span> <span class="va">pwr_analysis</span><span class="op">$</span><span class="va">df</span>,</span>
-<span>  alpha <span class="op">=</span> <span class="fl">0.05</span>,</span>
+<span>  alpha <span class="op">=</span> <span class="va">pwr_analysis</span><span class="op">$</span><span class="va">parms</span><span class="op">$</span><span class="va">alpha</span>,</span>
 <span>  alternative <span class="op">=</span> <span class="st">"not equal"</span>,</span>
 <span>  plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
@@ -947,7 +948,7 @@ Figure&nbsp;8: Simulation of the null distribution of the t-statistic along with
 </div>
 </section><section id="conclusion" class="level2"><h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>Our analysis indicates that the difference in means was not statistically significant (<span class="math inline">\(t\)</span> = 0.789, <span class="math inline">\(p\)</span> = 0.384). The effect size was very small and did not exceed the Minimal Effect Size (MES) threshold (Hedges’ <span class="math inline">\(g\)</span> = 0.06, 95% CI [-0.12, 0.25]), suggesting that any potential difference is likely negligible. Hedges’ <span class="math inline">\(g\)</span> is interpreted similarly to Cohen’s <span class="math inline">\(d\)</span>.</p>
-<p>The test had low power (1 - <span class="math inline">\(\beta\)</span> = 0.123), meaning a high probability of failing to detect a true difference if one exists (<span class="math inline">\(\beta = 0.877\)</span>). Given the low statistical power and the small effect size, <span class="brand-red"><strong>the evidence is insufficient</strong></span> to support a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across clusters B and D.</p>
+<p>The test had low power (1 - <span class="math inline">\(\beta\)</span> = 0.123), meaning a high probability of failing to detect a true difference if one exists (<span class="math inline">\(\beta\)</span> = 0.877). Given the low statistical power and the small effect size, <span class="brand-red"><strong>the evidence is insufficient</strong></span> to support a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 across clusters B and D.</p>
 </section><section id="license" class="level2"><h2 class="anchored" data-anchor-id="license">License</h2>
 <p><a href="https://opensource.org/license/mit"><img src="https://img.shields.io/badge/license-MIT-green.png" class="img-fluid" alt="License: MIT"></a> <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg" class="img-fluid" alt="License: CC BY 4.0"></a></p>
 <p>The code in this report is licensed under the <a href="https://opensource.org/license/mit/">MIT License</a>, while the document are available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
