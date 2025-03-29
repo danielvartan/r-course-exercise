@@ -544,7 +544,7 @@ power.t.test(
 
 ## Conclusion
 
-Our analysis found no statistically significant difference in means ($t$ = 0.789, $p$ = 0.384). The observed effect size was very small and did not exceed the Minimal Effect Size (MES) threshold (Cohen's $d$ = 0.06, 95% CI \[-0.12, 0.25\]). This suggests that any potential difference is likely negligible or effectively zero within the bounds of the 95% confidence interval.
+Our analysis found no statistically significant difference in means ($t$ = 0.789, $p$-value = 0.384). The observed effect size was very small and did not exceed the Minimal Effect Size (MES) threshold (Cohen's $d$ = 0.06, 95% CI \[-0.12, 0.25\]). This suggests that any potential difference is likely negligible or effectively zero within the bounds of the 95% confidence interval.
 
 Considering the MES threshold (Cohen's $d$ = 0.2), the test exhibited limited statistical power (1 - $\beta$ = 0.57), meaning there was a considerable probability ($\beta$ = 0.43) of failing to detect a true difference if one exists.
 
