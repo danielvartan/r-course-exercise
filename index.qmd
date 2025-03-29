@@ -74,7 +74,7 @@ All the analyses are 100% reproducible and can be run again at any time. See the
 
 ### Data Analysis
 
-The analysis was conducted using a bilateral [t-test for independent samples](https://en.wikipedia.org/wiki/Student%27s_t-test) alongside visual inspections of the data. Additionally, a power analysis and effect-size estimation were performed to ensure the robustness and practical significance of the results.
+The analysis employed a bilateral [t-test for independent groups](https://en.wikipedia.org/wiki/Student%27s_t-test) using a randomization-based empirical null distribution. Visual inspections of the data were also conducted to explore and assess patterns. Furthermore, a power analysis and effect-size estimation were performed to evaluate the statistical robustness and practical significance of the findings.
 
 ### Hypothesis Testing
 
