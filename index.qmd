@@ -494,20 +494,14 @@ misfs_d <-
 ```
 
 ```{r}
-effect_size <-
-  cohens_d(
-    x = misfs_b,
-    y = misfs_d,
-    mu = 0,
-    ci = 0.95,
-    alternative = "two.sided"
-  )
-
-effect_size
-```
-
-```{r}
-effect_size |> interpret_hedges_g(rules = "cohen1988")
+cohens_d(
+  x = misfs_b,
+  y = misfs_d,
+  mu = 0,
+  ci = 0.95,
+  alternative = "two.sided"
+) |>
+  interpret_hedges_g(rules = "cohen1988")
 ```
 
 ## Assessing Power

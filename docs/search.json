@@ -74,7 +74,7 @@
     "href": "index.html#assessing-the-effect-size",
     "title": "",
     "section": "Assessing the Effect Size",
-    "text": "Assessing the Effect Size\n\nCodemisfs_b &lt;-\n  data |&gt;\n  filter(misfs == \"B\") |&gt;\n  pull(n_upf_rel)\n\nmisfs_d &lt;-\n  data |&gt;\n  filter(misfs == \"D\") |&gt;\n  pull(n_upf_rel)\n\n\n\neffect_size &lt;-\n  cohens_d(\n    x = misfs_b,\n    y = misfs_d,\n    mu = 0,\n    ci = 0.95,\n    alternative = \"two.sided\"\n  )\n\neffect_size\n\n\n  \n\n\n\n\neffect_size |&gt; interpret_hedges_g(rules = \"cohen1988\")"
+    "text": "Assessing the Effect Size\n\nCodemisfs_b &lt;-\n  data |&gt;\n  filter(misfs == \"B\") |&gt;\n  pull(n_upf_rel)\n\nmisfs_d &lt;-\n  data |&gt;\n  filter(misfs == \"D\") |&gt;\n  pull(n_upf_rel)\n\n\n\ncohens_d(\n  x = misfs_b,\n  y = misfs_d,\n  mu = 0,\n  ci = 0.95,\n  alternative = \"two.sided\"\n) |&gt;\n  interpret_hedges_g(rules = \"cohen1988\")"
   },
   {
     "objectID": "index.html#assessing-power",

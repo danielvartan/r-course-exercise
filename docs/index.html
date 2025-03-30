@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Daniel Vartanian &amp; Jaqueline Lopes Pereira">
-<meta name="dcterms.date" content="2025-03-29">
+<meta name="dcterms.date" content="2025-03-30">
 <title>Exploring potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 among B and D MISFS-R clusters</title>
 <style>
 code{white-space: pre-wrap;}
@@ -140,10 +140,10 @@ window.Quarto = {
 <meta name="citation_title" content="Exploring potential differences in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 among B and D MISFS-R clusters
 ">
 <meta name="citation_author" content="Daniel Vartanian &amp;amp; Jaqueline Lopes Pereira">
-<meta name="citation_publication_date" content="2025-03-29">
-<meta name="citation_cover_date" content="2025-03-29">
+<meta name="citation_publication_date" content="2025-03-30">
+<meta name="citation_cover_date" content="2025-03-30">
 <meta name="citation_year" content="2025">
-<meta name="citation_online_date" content="2025-03-29">
+<meta name="citation_online_date" content="2025-03-30">
 <meta name="citation_fulltext_html_url" content="https://danielvartan.github.io/r-course-exercise/">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Measuring sustainable food systems in Brazil: A framework and multidimensional index to evaluate socioeconomic, nutritional, and environmental aspects;,citation_abstract=The sustainability of food systems is commonly measured at the global or national level using multidimensional indices. However, it is not possible to use such indices at subnational levels, because the data for many indicators are not available and large countries such as Brazil have completely different food systems depending on the state or region considered. This paper presents a sustainable food systems framework for Brazil and the Brazilian Multidimensional Index for Sustainable Food Systems (MISFS), which is the first index of its kind that considers local behaviors and actions to rank states and regions of the country. The dimensions and indicators included in the index were identified from a literature review and an exclusion criteria, which considered the Brazilian context, that ended up with 17 indicators divided in three dimensions (environmental, socioeconomic, and nutritional). We followed well-known procedures to create an interpretable multidimensional index, which include normalization, weighting, aggregating, and sensitivity analysis. The performance of the states was starkly different, regarding the indicators and dimensions considered. No state presented a high score for all three dimensions, and even states with a high MISFS score had room to improve in one or two dimensions. In general, high-income states scored well on socioeconomic indicators (e.g., agriculture education), but poorly on most environmental indicators (e.g., water footprint), and some nutritional indicators (e.g., obesity rate). This index is the first initiative to measure the Brazilian food systems according to local practices and behaviors at state level and it is a starting point to help policymakers understand the opportunities of improvement of their food systems. This study may also help other countries to develop their own frameworks and strategies to improve their regionalized food systems.;,citation_author=Aline Martins Carvalho;,citation_author=Eliseu Verly Jr;,citation_author=Dirce Maria Marchioni;,citation_author=Andrew D. Jones;,citation_publication_date=2021-07-01;,citation_cover_date=2021-07-01;,citation_year=2021;,citation_fulltext_html_url=https://www.sciencedirect.com/science/article/pii/S0305750X21000826;,citation_doi=10.1016/j.worlddev.2021.105470;,citation_issn=0305-750X;,citation_volume=143;,citation_journal_title=World Development;,citation_journal_abbrev=World Development;">
@@ -241,7 +241,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-03-29</p>
+      <p class="date">2025-03-30</p>
     </div>
   </div>
   
@@ -864,26 +864,14 @@ Figure&nbsp;8: Simulation of the null distribution of the t-statistic along with
 </details>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">effect_size</span> <span class="op">&lt;-</span></span>
-<span>  <span class="fu"><a href="https://easystats.github.io/effectsize/reference/cohens_d.html">cohens_d</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="va">misfs_b</span>,</span>
-<span>    y <span class="op">=</span> <span class="va">misfs_d</span>,</span>
-<span>    mu <span class="op">=</span> <span class="fl">0</span>,</span>
-<span>    ci <span class="op">=</span> <span class="fl">0.95</span>,</span>
-<span>    alternative <span class="op">=</span> <span class="st">"two.sided"</span></span>
-<span>  <span class="op">)</span></span>
-<span></span>
-<span><span class="va">effect_size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["Cohens_d"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["CI"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["CI_low"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["CI_high"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.06467361285","2":"0.95","3":"-0.1182267241","4":"0.2475512445"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">effect_size</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://easystats.github.io/effectsize/reference/interpret_cohens_d.html">interpret_hedges_g</a></span><span class="op">(</span>rules <span class="op">=</span> <span class="st">"cohen1988"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://easystats.github.io/effectsize/reference/cohens_d.html">cohens_d</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="va">misfs_b</span>,</span>
+<span>  y <span class="op">=</span> <span class="va">misfs_d</span>,</span>
+<span>  mu <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  ci <span class="op">=</span> <span class="fl">0.95</span>,</span>
+<span>  alternative <span class="op">=</span> <span class="st">"two.sided"</span></span>
+<span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://easystats.github.io/effectsize/reference/interpret_cohens_d.html">interpret_hedges_g</a></span><span class="op">(</span>rules <span class="op">=</span> <span class="st">"cohen1988"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
@@ -895,7 +883,7 @@ Figure&nbsp;8: Simulation of the null distribution of the t-statistic along with
 </section><section id="assessing-power" class="level2"><h2 class="anchored" data-anchor-id="assessing-power">Assessing Power</h2>
 <p>The power analysis below was conducted considering the Minimal Effect Size (MES) threshold (Cohen’s <span class="math inline">\(d\)</span> = 0.2), <strong>not the observed effect size</strong>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pwr_analysis</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/pwrss/man/2-Two-Means.html">pwrss.t.2means</a></span><span class="op">(</span></span>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pwr_analysis</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/pwrss/man/2-Two-Means.html">pwrss.t.2means</a></span><span class="op">(</span></span>
 <span>  mu1 <span class="op">=</span> <span class="fl">0.2</span>,</span>
 <span>  mu2 <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>  paired <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -922,7 +910,7 @@ Figure&nbsp;8: Simulation of the null distribution of the t-statistic along with
 <span><span class="co">#&gt;  Type II error rate = 0.433</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/pwrss/man/0-Generic-t-Test.html">power.t.test</a></span><span class="op">(</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/pwrss/man/0-Generic-t-Test.html">power.t.test</a></span><span class="op">(</span></span>
 <span>  ncp <span class="op">=</span> <span class="va">pwr_analysis</span><span class="op">$</span><span class="va">ncp</span>,</span>
 <span>  df <span class="op">=</span> <span class="va">pwr_analysis</span><span class="op">$</span><span class="va">df</span>,</span>
 <span>  alpha <span class="op">=</span> <span class="va">pwr_analysis</span><span class="op">$</span><span class="va">parms</span><span class="op">$</span><span class="va">alpha</span>,</span>
@@ -932,7 +920,7 @@ Figure&nbsp;8: Simulation of the null distribution of the t-statistic along with
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
-<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-29-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="index_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></a></p>
+<figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-28-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="index_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
