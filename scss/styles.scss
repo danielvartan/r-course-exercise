@@ -1,65 +1,52 @@
 /*-- scss:defaults --*/
 
-$toc-font-size: 0.9em !default;
-
 $content-padding-top: 0.5rem;
 
-$callout-color-note: #B44522;
-$callout-color-tip: #B44522;
-$callout-color-caution: #B44522;
-$callout-color-warning: #B44522;
-$callout-color-important: #B44522;
+$callout-color-note: #014691;
+$callout-color-tip: #1d8f01;
+$callout-color-caution: #8f0170;
+$callout-color-warning: #8f5a01;
+$callout-color-important: #910c01;
 
 /*-- scss:rules --*/
+
+/* Additional Google Fonts ----- */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Body ----- */
 
 body {
-  color: $brand-grey;
+  color: $brand-black;
 }
 
 /* Navigation ----- */
-
-.sidebar nav[role=doc-toc] ul>li>a.active,
-.sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
-  color: $brand-black !important;
-}
-
-div.sidebar-item-container a:hover {
-  color: $brand-black !important;
-}
-
-div.sidebar-item-container .active {
-  font-weight: bold;
-}
 
 .bi-github {
   color: $brand-white;
 }
 
-/* Headings ----- */
+/* Table of Contents ----- */
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1
-.header-section-number {
-  color: $tertiary;
+.sidebar nav[role="doc-toc"] > h2, .sidebar nav[role="doc-toc"] > .h2 {
+  font-weight: bold;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a.active, .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
   font-weight: bold;
 }
 
 /* Blockquote ----- */
 
 .blockquote {
-  color: $tertiary;
+  color: $brand-gray;
 }
 
-/* Code ----- */
+/* Callouts ----- */
 
-code a:any-link {
-  text-decoration: underline;
-  text-decoration-color: $primary;
-}
-
-.code-tools-button {
-  color: $brand-black;
+.callout:not(.callout-titled) .callout-body > :last-child,
+.callout:not(.callout-titled) .callout-body > div > :last-child {
+  margin-bottom: 0.5rem;
 }
 
 /* Figures ----- */
@@ -72,51 +59,66 @@ figure.figure {
 
 .panel-caption, .figure-caption, .subfigure-caption, .table-caption,
 figcaption, caption {
-  color: $tertiary;
+  color: $brand-gray;
   font-size: 0.9rem;
   text-align: center;
 }
 
 .quarto-float-caption-top {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: $brand-black;
   margin-bottom: 2em;
 }
 
 .legend {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: $brand-black;
 }
 
 /* Colors ----- */
 
-.red {
-  color: red;
+.brand-blue {
+  color: $brand-blue;
 }
 
-.brand-green {
-  color: $brand-green;
+.brand-gray {
+  color: $brand-gray;
 }
 
-.brand-red {
-  color: $brand-red;
+.brand-black {
+  color: $brand-black;
 }
 
-.brand-brown {
-  color: $brand-brown;
+.brand-comp-blue-1 {
+  color: $brand-comp-blue-1;
 }
 
-.brand-brown-750 {
-  color: $brand-brown-750;
+.brand-triad-blue-red {
+  color: $brand-triad-blue-red;
 }
 
-.brand-grey {
-  color: $brand-grey;
+.brand-square-blue-green{
+  color: $brand-square-blue-green;
+}
+
+.brand-blue-l25 {
+  color: $brand-blue-l25;
 }
 
 /* Others ----- */
 
-.center-x {
-  display: inline-block;
-  text-align: center;
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bold-extra {
+  font-weight: 800;
+}
+
+.bold-black {
+  font-weight: 900;
 }
