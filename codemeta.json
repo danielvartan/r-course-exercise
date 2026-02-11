@@ -58,6 +58,7 @@
   "issueTracker": "https://github.com/danielvartan/r-course-exercise/issues",
   "runtimePlatform": "R",
   "relatedLink": [
+    "https://doi.org/10.5281/zenodo.18615610",
     "https://danielvartan.github.io/r-course-exercise/",
     "https://doi.org/10.5281/zenodo.18332665",
     "https://danielvartan.github.io/r-course/",
@@ -77,5 +78,5 @@
   "developmentStatus": "inactive",
   "readme": "https://github.com/danielvartan/r-course-exercise/blob/main/README.md",
   "releaseNotes": "https://github.com/danielvartan/r-course-exercise/blob/main/NEWS.md",
-  "version": "2.0.0"
+  "version": "2.0.1.9000"
 }

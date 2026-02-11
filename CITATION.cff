@@ -10,7 +10,7 @@ authors:
     affiliation: University of São Paulo
     orcid: "https://orcid.org/0000-0001-7782-759X"
 abstract: >-
-  Class exercise for the course "An Introduction to the R Programming Language"
+  Class exercise for the course "An Introduction to the R Programming Language".
 keywords:
   - Education
   - Nutrition
@@ -36,11 +36,14 @@ preferred-citation:
       given-names: Daniel
       email: danielvartan@proton.me
       orcid: https://orcid.org/0000-0001-7782-759X
-  doi: 10.5281/zenodo.
+  doi: 10.5281/zenodo.18615610
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.18615610
+    description: Zenodo Record
   - type: url
     value: https://github.com/danielvartan/r-course-exercise
     description: GitHub Code Repository
 repository-code: https://github.com/danielvartan/r-course-exercise
 license: GPL-3.0-or-later
-version: 2.0.0
+version: 2.0.1.9000
