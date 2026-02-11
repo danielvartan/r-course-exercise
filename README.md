@@ -28,7 +28,7 @@ The report is available [here](https://danielvartan.github.io/r-course-exercise/
 
 The pipeline was developed using the [Quarto](https://quarto.org/) publishing system, along with the [R](https://www.r-project.org/) programming language. To ensure consistent results, the [`renv`](https://rstudio.github.io/renv/) package was used to manage and restore the R environment.
 
-After installing the three dependencies mentioned above and setting all the keys, follow these steps to reproduce the analyses:
+After installing the three dependencies mentioned above, follow these steps to reproduce the results:
 
 1. **Clone** this repository to your local machine.
 2. **Open** the project in your preferred [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment).
