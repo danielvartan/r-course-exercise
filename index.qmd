@@ -320,8 +320,8 @@ data |> glimpse()
 data <-
   data |>
   filter(
-    !(n_upf > n_monitored),
-    !(n_upf < 10)
+    !(n_monitored < 10),
+    !(n_upf > n_monitored)
   )
 ```
 
@@ -693,7 +693,7 @@ data |>
 Density plots showing the distribution of the percentage of children aged 2 to 4 in 2022 who consumed ultra-processed foods ([UPF](https://en.wikipedia.org/wiki/Ultra-processed_food)) between municipalities in clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems ([MISFS-R](https://doi.org/10.1002/sd.2376)).
 :::
 
-::: {#fig-combine-distributions-density-plot}
+::: {#fig-combine-distributions-qq-plot}
 ```{r}
 #| code-fold: true
 
@@ -923,11 +923,11 @@ cohens_d(
 
 As noted at the beginning of this exercise, the data and analysis are purely educational and should not be used to draw real-world conclusions without further validation. **The data contain numerous issues and do not meet the assumptions of the statistical tests used**, which compromise the reliability of the results. Therefore, any conclusions should be interpreted with caution.
 
-Assuming the data were valid and the t-test assumptions were met, the analysis found no statistically significant difference in means ($t$ = 0.899, $p$-value = `{r} p_value$p_value |> round(3)`). The observed effect size was very small and did not exceed the Minimum Effect Size ([MES](https://en.wikipedia.org/wiki/Effect_size)) threshold (Cohen's $d$ = 0.080, 95% CI [-0.107, 0.268]), indicating any potential difference is likely negligible or effectively zero within the 95% confidence interval bounds.
+Assuming the data were valid and the t-test assumptions were met, the analysis found no statistically significant difference in means ($t$ = 0.789, $p$-value = `{r} p_value$p_value |> round(3)`). The observed effect size was very small and did not exceed the Minimum Effect Size ([MES](https://en.wikipedia.org/wiki/Effect_size)) threshold (Cohen's $d$ = 0.065, 95% CI [-0.118, 0.248]), indicating any potential difference is likely negligible or effectively zero within the 95% confidence interval bounds.
 
 The power analysis revealed that the study lacked sufficient power to detect a small effect size (Cohen's $d$ = 0.2) with the given sample size, which may contribute to the non-significant result. While we cannot reject the null hypothesis, we also cannot confidently conclude that there is no meaningful difference in ultra-processed food consumption between the two clusters.
 
-Based on these findings, we conclude that the [**evidence is insufficient**]{.brand-triad-blue-red} to support a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 between municipalities in clusters B and D. This does not confirm the absence of a difference, only that the study lacked sufficient power to detect one. Future research with a larger sample size may help clarify this relationship.
+Based on these findings, we conclude that the [**data are insufficient**]{.brand-triad-blue-red} to support a meaningful difference in ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 between municipalities in clusters B and D. This does not confirm the absence of a difference, only that the study lacked sufficient statistical power to detect one. Future research with larger sample sizes may help clarify this relationship.
 
 ## Citation
 

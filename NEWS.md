@@ -1,5 +1,9 @@
 # v2.0.1.9000 (development version)
 
+# v2.0.1 (2026-02-11)
+
+- Fix validation issue in data filtering.
+
 # v2.0.0 (2026-02-11)
 
 - Added a `NEWS.md` file to track changes.
