@@ -4,7 +4,7 @@
 <meta name="generator" content="quarto-1.8.27">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Daniel Vartanian">
-<meta name="dcterms.date" content="2026-02-11">
+<meta name="dcterms.date" content="2026-02-13">
 <title>Differences Among Brazilian Children Aged 2 to 4 in Ultra-Processed Food Consumption in 2022 Between Municipalities in Clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)</title>
 <style>
 code{white-space: pre-wrap;}
@@ -144,10 +144,10 @@ window.Quarto = {
 <meta name="citation_title" content="Differences Among Brazilian Children Aged 2 to 4 in Ultra-Processed Food Consumption in 2022 Between Municipalities in Clusters B and D of the Revised Multidimensional Index for Sustainable Food Systems (MISFS-R)
 ">
 <meta name="citation_author" content="Daniel Vartanian">
-<meta name="citation_publication_date" content="2026-02-11">
-<meta name="citation_cover_date" content="2026-02-11">
+<meta name="citation_publication_date" content="2026-02-13">
+<meta name="citation_cover_date" content="2026-02-13">
 <meta name="citation_year" content="2026">
-<meta name="citation_online_date" content="2026-02-11">
+<meta name="citation_online_date" content="2026-02-13">
 <meta name="citation_fulltext_html_url" content="https://danielvartan.github.io/r-course-exercise/">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Quarto;,citation_abstract=Quarto is an open-source scientific and technical publishing system built on Pandoc.;,citation_author=J. J. Allaire;,citation_author=Charles Teague;,citation_author=Yihui Xie;,citation_author=Christophe Dervieux;,citation_doi=10.5281/ZENODO.5960048;,citation_publisher=Zenodo;">
@@ -307,7 +307,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 11, 2026</p>
+      <p class="date">February 13, 2026</p>
     </div>
   </div>
   
@@ -379,22 +379,22 @@ Figure&nbsp;2: Data science workflow proposed by Wickham, Çetinkaya-Runde, and 
 <p>The test was structured as follows:</p>
 <ul>
 <li><p><strong>Null Hypothesis</strong> (<span class="math inline">\(\text{H}_{0}\)</span>): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen’s <span class="math inline">\(d\)</span> effect-size statistic being smaller than 0.2 (negligible).</p></li>
-<li><p><strong>Alternative Hypothesis</strong> (<span class="math inline">\(\text{H}_{a}\)</span>): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen’s <span class="math inline">\(d\)</span> effect-size statistic being greater or equal than 0.2 (non-negligible).</p></li>
+<li><p><strong>Alternative Hypothesis</strong> (<span class="math inline">\(\text{H}_{1}\)</span>): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen’s <span class="math inline">\(d\)</span> effect-size statistic being greater or equal than 0.2 (non-negligible).</p></li>
 </ul>
 <p>Formally:</p>
 <p><span class="math display">\[
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 \]</span></p>
 <p><span class="math display">\[
 \begin{cases}
-\text{H}_{0}: \text{Cohen's d} &lt; \text{MES} \\
-\text{H}_{a}: \text{Cohen's d} \geq \text{MES} \\
+\text{H}_{0}: \text{Cohen's} \ d &lt; \text{MES} \\
+\text{H}_{1}: \text{Cohen's} \ d \geq \text{MES} \\
 \end{cases}
 \]</span></p>
-<p>The hypothesis test is conditioned on a <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors">Type I error</a> (<span class="math inline">\(\alpha\)</span>) of 0.05 and a minimum <a href="https://en.wikipedia.org/wiki/Power_(statistics)">statistical power</a> (1 - <span class="math inline">\(\beta\)</span>) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors">Type II error</a> (<span class="math inline">\(\beta\)</span>).</p>
+<p>The hypothesis test is conditioned on a <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors">type-I error</a> (<span class="math inline">\(\alpha\)</span>) of 0.05 and a minimum <a href="https://en.wikipedia.org/wiki/Power_(statistics)">statistical power</a> (1 - <span class="math inline">\(\beta\)</span>) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors">type-II error</a> (<span class="math inline">\(\beta\)</span>).</p>
 </section><section id="code-style" class="level3"><h3 class="anchored" data-anchor-id="code-style">Code Style</h3>
 <p>The Tidyverse <a href="https://tidyverse.tidyverse.org/articles/manifesto.html">tidy tools manifesto</a> <span class="citation" data-cites="wickham2023e">(<a href="#ref-wickham2023e" role="doc-biblioref">Wickham et al., 2023</a>)</span>, <a href="https://style.tidyverse.org/">code style guide</a> <span class="citation" data-cites="wickhama">(<a href="#ref-wickhama" role="doc-biblioref">Wickham, n.d.-a</a>)</span> and <a href="https://design.tidyverse.org/">design principles</a> <span class="citation" data-cites="wickhamc">(<a href="#ref-wickhamc" role="doc-biblioref">Wickham, n.d.-b</a>)</span> were followed to ensure consistency and enhance readability.</p>
 </section><section id="reproducibility" class="level3"><h3 class="anchored" data-anchor-id="reproducibility">Reproducibility</h3>

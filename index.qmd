@@ -101,25 +101,25 @@ The test was structured as follows:
 
 - **Null Hypothesis** ($\text{H}_{0}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 does not differ meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being smaller than 0.2 (negligible).
 
-- **Alternative Hypothesis** ($\text{H}_{a}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than 0.2 (non-negligible).
+- **Alternative Hypothesis** ($\text{H}_{1}$): Ultra-processed food consumption among Brazilian children aged 2 to 4 in 2022 differs meaningfully between municipalities in MISFS-R clusters B and D, indicated by Cohen's $d$ effect-size statistic being greater or equal than 0.2 (non-negligible).
 
 Formally:
 
 $$
 \begin{cases}
 \text{H}_{0}: \mu_{A} = \mu_{B} \\
-\text{H}_{a}: \mu_{A} \neq \mu_{B} \\
+\text{H}_{1}: \mu_{A} \neq \mu_{B} \\
 \end{cases}
 $$
 
 $$
 \begin{cases}
-\text{H}_{0}: \text{Cohen's d} < \text{MES} \\
-\text{H}_{a}: \text{Cohen's d} \geq \text{MES} \\
+\text{H}_{0}: \text{Cohen's} \ d < \text{MES} \\
+\text{H}_{1}: \text{Cohen's} \ d \geq \text{MES} \\
 \end{cases}
 $$
 
-The hypothesis test is conditioned on a [Type I error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors) ($\alpha$) of 0.05 and a minimum [statistical power](https://en.wikipedia.org/wiki/Power_(statistics)) (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a [Type II error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors) ($\beta$).
+The hypothesis test is conditioned on a [type-I error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors) ($\alpha$) of 0.05 and a minimum [statistical power](https://en.wikipedia.org/wiki/Power_(statistics)) (1 - $\beta$) of 0.8. This means the test should have at least an 80% probability of correctly rejecting the null hypothesis when it is false, thereby minimizing the risk of a [type-II error](https://en.wikipedia.org/wiki/Type_I_and_type_II_errors) ($\beta$).
 
 ### Code Style
 
